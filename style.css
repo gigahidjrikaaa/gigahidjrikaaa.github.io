@@ -33,3 +33,37 @@ nav {
     align-items: center;
     flex-wrap: wrap;
 }
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: yellow;
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    transition: 0.5s;
+}
