@@ -1,0 +1,36 @@
+/* FILEPATH: /d:/Astaga Ngoding/Github/gigahidjrikaaa.github.io/style.css */
+
+/* Set the background color to black */
+body {
+    background-color: #000;
+}
+
+/* Set the text color to white */
+body, h1, h2, h3, h4, h5, h6, p, a {
+    color: #fff;
+}
+
+/* Set the link color to a lighter shade of white */
+a {
+    color: #ddd;
+}
+
+/* Set the hover color for links to a lighter shade of gray */
+a:hover {
+    color: #aaa;
+}
+
+/* Set the border color for images to a lighter shade of gray */
+img {
+    border: 1px solid #aaa;
+}
+
+/* Set the background color for code blocks to a darker shade of gray */
+pre {
+    background-color: #222;
+}
+
+/* Set the text color for code blocks to a lighter shade of white */
+pre code {
+    color: #ddd;
+}
