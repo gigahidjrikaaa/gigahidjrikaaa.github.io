@@ -18,8 +18,18 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    text-align: center;
     background-image: url("images/giga-banner2.jpg");
     background-size: cover;
     background-position: center;
+}
+
+.container {
+    padding: 10px 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
