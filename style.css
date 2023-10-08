@@ -49,6 +49,12 @@ nav ul li a {
     text-decoration: none;
     font-size: calc(13px + 1vw);
     font-weight: bold;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: #BA2434;
+    transition: 0.5s;
 }
 
 /* Create a line below the text */
@@ -61,6 +67,7 @@ nav ul li a::after {
     left: 0px;
     bottom: -6px;
     transition: 0.5s;
+    box-shadow: 0 0 10px #BA2434;
 }
 
 /* When hovered, show the line below */
@@ -71,8 +78,8 @@ nav ul li a:hover::after {
 
 .header-text {
     position: absolute;
-    margin: 10% 20%;
-    font-size: 3vw;
+    margin: 7% 20%;
+    font-size: calc(13px + 1vw);
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -87,10 +94,112 @@ nav ul li a:hover::after {
     color: #BA2434;
 }
 
+#get-started-btn {
+    background-color: #BA2434;
+    color: #FFFFFF;
+    padding: 1.5vw 2vw;
+    border-radius: 5px;
+    font-size: calc(13px + 2vw);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s
+}
+
+#get-started-btn:hover {
+    background-color: #FFFFFF;
+    color: #BA2434;
+    transition: 0.5s;
+    /* glow */
+    box-shadow: 0 0 20px #BA2434;
+}
+
 /* About */
 #about {
     width: 100%;
     height: 100vh;
-    padding: 10% 0;
+    padding: 7% 0;
     background-color: #080808;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    padding: 0 2%;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    line-height: 1.5;
+}
+
+.subtitle {
+    font-size: calc(20px + 3vw);
+    font-weight: bold;
+    color: #BA2434;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 2% 0%;
+    /* justify-content: space-between; */
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: calc(13px + 1vw);
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #BA2434;
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    transition: 0.5s;
+    box-shadow: 0 0 10px #BA2434;
+}
+
+.tab-links:hover::after {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #BA2434;
+    font-size: calc(14px + 0.4vw);
+    font-weight: bold;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-content {
+    display: block;
 }
