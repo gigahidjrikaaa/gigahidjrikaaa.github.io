@@ -16,6 +16,46 @@ html {
     font-size: 12px;
 }
 
+/* Create a better scrollbar for the web */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BA2434;
+    border-radius: 10px;
+}
+
+/* Make the scrollbar disappear when not scrolling */
+::-webkit-scrollbar-thumb:hover {
+    background: #BA2434;
+}
+
+/* Make the scrollbar disappear when not scrolling */
+::-webkit-scrollbar-thumb:active {
+    background: #BA2434;
+}
+
+/* Make the scrollbar disappear when not scrolling */
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #BA2434;
+}
+
+/* Make the scrollbar disappear when not scrolling */
+::-webkit-scrollbar-thumb:horizontal {
+    background: #BA2434;
+}
+
+/* Make the scrollbar disappear when not scrolling */
+::-webkit-scrollbar-thumb:vertical {
+    background: #BA2434;
+}
+
+
 /* Set the background color to black */
 body {
     background-color: #080808;
@@ -260,6 +300,23 @@ nav ul li a:hover::after {
 
 .tab-contents.active-content {
     display: block;
+    overflow-y: scroll;
+    height: 60vh;
+    /* border: yellow 2px solid; */
+}
+
+/* Make a better scrollbar */
+.tab-contents.active-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tab-contents.active-content::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+.tab-contents.active-content::-webkit-scrollbar-thumb {
+    background: #BA2434;
+    border-radius: 10px;
 }
 
 .inline-link {
