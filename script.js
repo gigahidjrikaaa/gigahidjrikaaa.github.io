@@ -63,6 +63,3 @@ window.addEventListener('scroll', function(e) {
     }
     ticking = true;
 });
-
-// after loading, update navbar
-updateNavbar();
