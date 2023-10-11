@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-eqiv="X-UA-Compatible" content="ie=edge">
-    <title>Get to Know Giga!</title>
+    <title>Get to Know Giga! - Giga's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -23,30 +25,100 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-text">
+            <div class="header-text" data-aos="fade-right">
                 <p>Information Engineering Undergraduate</p>
-                <h1>Hi, I'm <span>Giga</span>. Looking forward to working with you!</h1>
-
+                <h1>Hi, I'm <span>Giga</span>.<br>Looking forward to working with you!</h1>
                 <br>
-                <a href="#" class="btn">Get Started</a>
+                <a href="#" id="get-started-btn">Get Started</a>
             </div>
         </div>
     </div>
     <!-- About Section -->
     <div id="about">
-        <div class="container">
+        <div class="container" data-aos="fade-right">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/giga-portrait.jpg" width="100vw"  alt="Giga's photo">
+                    <img src="images/giga-banner.png" alt="Giga's photo">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hi, I'm Giga! I'm a 3rd year Information Engineering Undergraduate at Universitas Gadjah Mada. I'm from Cilacap, and I currently reside in Yogyakarta. I'm interested in robotics, cyber security, and web development. To know more about what I do, visit my <a id="linkedin-link" href="https://www.linkedin.com/in/gigahidjrikaaa" target="_blank" title="Giga's LinkedIn">Linkedin</a> or check out my <a class="inline-link" href="#">Portfolio</a> section!</p>
+                    
+                    <div class="tab-titles">
+                        <div class="tab-links active-link" id="skills-link" onclick="openTab('skills')">Skills</div>
+                        <div class="tab-links" id="education-link" onclick="openTab('education')">Education</div>
+                        <div class="tab-links" id="experience-link" onclick="openTab('experience')">Experience</div>
+                    </div>
+
+                    <div class="tab-contents active-content" id="skills">
+                        <ul>
+                            <li><span>Graphic Design</span><br>Social Media Design</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>Marketing</span><br>Copywriting, Advertising, Analytics</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021 - Now</span><br>Universitas Gadjah Mada - Bachelor of Information Engineering</li>
+                            <li><span>2020 - 2021</span><br>Universitas Sebelas Maret - Bachelor of Informatics (Discontinued)</li>
+                            <li><span>2017 - 2020</span><br>SMA Negeri 6 Yogyakarta</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Night Login Cyber Security</span><br>Community Staff & Lecturer</li>
+                            <li><span>Gadjah Mada Robotics Team</span><br>Head of Programmer (Heroes)</li>
+                            <li><span>KMTETI UGM</span><br>Staff of Electropreneur</li>
+                            <li><span>Society of Renewable Energy</span><br>Staff of Multimedia</li>
+                            <li><span>Find IT 2023</span><br>Capture the Flag Coordinator & Problem Setter</li>
+                            <li><span>Find IT 2022</span><br>Capture the Flag Staff & Problem Setter</li>
+                            <li><span>Technocorner 2023</span><br>Staff of IoT Competition</li>
+                            <li><span>EP Class - Stocks Trading 101</span><br>Project Lead & Moderator</li>
+                            <li><span>UGM Graduation Committee</span><br>Name Reader/MC</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <h1>Get to Know Giga!</h1>
-    <p>Hi, I'm Giga! I'm a 3rd year Information Engineering Undergraduate at Universitas Gadjah Mada. I'm from Cilacap, and I currently reside in Yogyakarta. I'm interested in robotics, cyber security, and web development.</p>
-    <p>Here's a link to my <a href="
+    <!-- Services Section -->
+    <div id="services">
+        <div class="container" data-aos="fade-right">
+            <h1 class="subtitle">Services</h1>
+            <div class="services-list">
+                <div class="services-item" id="webdev-item" href="#">
+                    <img src="images/services-1.png" alt="Services 1">
+                    <h2>Web Development</h2>
+                    <p>Web App Development</p>
+                </div>
+                <div class="services-item" id="graphic-design-item" href="#">
+                    <img src="images/services-2.png" alt="Services 2">
+                    <h2>Graphic Design</h2>
+                    <p>Social Media Design</p>
+                </div>
+                <div class="services-item" id="marketing-item" href="#">
+                    <img src="images/services-3.png" alt="Services 3">
+                    <h2>Marketing</h2>
+                    <p>Copywriting, Advertising, Analytics</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+<!-- Script here. Doesn't work if I put it on top. -->
+<script>
+    AOS.init(
+        {
+            duration: 1500,
+            offset: 0,
+        }
+    );
+
+    document.querySelectorAll('img').forEach((img) =>
+        img.addEventListener('load', () =>
+            AOS.refresh()
+        )
+    );
+</script>
 </html>
