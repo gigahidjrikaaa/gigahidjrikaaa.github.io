@@ -20,6 +20,7 @@ let ticking = false;
 // Change navbar size and color on scroll
 function updateNavbar() {
     const navbar = document.querySelector('nav');
+    const navbarLinks = document.querySelectorAll('nav ul li a');
     const scrollPosition = window.scrollY;
     var scaling = 1 - (scrollPosition / (2*window.innerHeight));
     
@@ -27,14 +28,6 @@ function updateNavbar() {
     scaling = Math.max(0.5, Math.min(1.0, scaling));
     
     var navbarOpacity = scrollPosition / (1*window.innerHeight);
-
-    if(navbarOpacity > 0.6) {
-        // add a white background to each navbar item when they are hovered over
-        document.querySelectorAll('nav ul li a').forEach(function(element) {
-            element.classList.add('hover');
-        });
-
-    }
     
     // Change background color of navbar
     navbar.style.backgroundColor = `rgba(186, 36, 52, ${navbarOpacity})`;
