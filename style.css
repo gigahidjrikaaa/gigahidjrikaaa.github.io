@@ -51,6 +51,7 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 1% 0%;
+    margin-top: 2%;
     background-color: #BA2434;
 }
 
@@ -415,12 +416,20 @@ nav ul li a:hover::after {
 }
 
 .services-item:hover {
-    opacity: 1;
     background-color: #BA2434;
     transition: 0.5s;
     box-shadow: 0 0 20px #FFFFFF;
     cursor: pointer;
     transform: translateY(-10px);
+}
+
+/* if services-item is pressed  */
+.services-item:active {
+    background-color: #FFFFFF;
+    transition: 0.1s;
+    box-shadow: 0 0 20px #BA2434;
+    cursor: pointer;
+    transform: scale(0.95) translateY(-10px);
 }
 
 .services-item h2 {
@@ -456,3 +465,5 @@ nav ul li a:hover::after {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
+/* Portfolio Section */
