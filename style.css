@@ -398,6 +398,10 @@ nav ul li a:hover::after {
     background-color: #080808;
 }
 
+#services .container {
+    padding: 0 3%;
+}
+
 .services-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -423,17 +427,35 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
+.services-item h2 {
+    font-size: calc(12px + 0.5vw);
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    transition: 0.5s;
+}
+
+.services-item p {
+    font-size: calc(12px + 0.1vw);
+    color: #FFFFFF;
+    transition: 0.5s;
+}
+
 .services-item img {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
     border-radius: calc(10px);
+    margin-bottom: 10px;
 }
 
 /* =========================================================== */
 /* =============== Responsive Services Section =============== */
 /* =========================================================== */
 @media screen and (max-width: 768px) {
+    #services {
+        height: fit-content;
+    }
     .services-list {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
