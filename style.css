@@ -19,42 +19,25 @@ html {
 /* Create a better scrollbar for the web */
 ::-webkit-scrollbar {
     width: 10px;
+    transition: 0.5s;
 }
 
 ::-webkit-scrollbar-track {
     background: #080808;
+    transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #BA2434;
     border-radius: 10px;
+    transition: 0.5s;
 }
 
-/* Make the scrollbar disappear when not scrolling */
 ::-webkit-scrollbar-thumb:hover {
-    background: #BA2434;
+    /* background: #FFFFFF; */
+    box-shadow: #FFFFFF 0px 0px 10px;
+    transition: 0.5s;
 }
-
-/* Make the scrollbar disappear when not scrolling */
-::-webkit-scrollbar-thumb:active {
-    background: #BA2434;
-}
-
-/* Make the scrollbar disappear when not scrolling */
-::-webkit-scrollbar-thumb:window-inactive {
-    background: #BA2434;
-}
-
-/* Make the scrollbar disappear when not scrolling */
-::-webkit-scrollbar-thumb:horizontal {
-    background: #BA2434;
-}
-
-/* Make the scrollbar disappear when not scrolling */
-::-webkit-scrollbar-thumb:vertical {
-    background: #BA2434;
-}
-
 
 /* Set the background color to black */
 body {
@@ -65,6 +48,7 @@ body {
 /* Footer */
 footer {
     position: relative;
+    bottom: 0;
     width: 100%;
     padding: 1% 0%;
     background-color: #BA2434;
@@ -76,7 +60,17 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0.5% 0%;
+    padding: calc(7px + 0.3%) 0%;
+}
+
+.special-thanks ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2%;
+}
+
+.special-thanks h3 {
+    margin-bottom: 5px;
 }
 
 .special-thanks li {
@@ -220,6 +214,7 @@ nav ul li a:hover::after {
     position: relative;
     width: 100%;
     height: 100vh;
+    /* min-height: 10000px; */
     padding: 7% 0 0 0;
     background-color: #080808;
     /* border: yellow 2px solid; */
@@ -236,26 +231,6 @@ nav ul li a:hover::after {
     /* border: yellow 2px solid; */
     /* align-items: flex-start; */
     /* background: rgba(255,0,0,.2) */
-}
-
-@media screen and (min-width: 768px) {
-    .row {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        /* justify-content: space-between; */
-        /* align-items: center; */
-        /* border: yellow 2px solid; */
-    }
-    .about-col-1 img {
-        height: calc(35vw + 10vh);
-        aspect-ratio: 1/1;
-    };
-}
-
-.about-col-1 {
-    flex-basis: 35%;
-    flex-shrink: 0 !important; 
-    
 }
 
 .about-col-1 img {
@@ -388,6 +363,33 @@ nav ul li a:hover::after {
     box-shadow: 0 0 100px #0072b1  inset;
 }
 
+.about-col-1 {
+    flex-basis: 35%;
+    flex-shrink: 0 !important;  
+}
+
+/* ======================================================== */
+/* =============== Responsive About Section =============== */
+/* ======================================================== */
+@media screen and (max-width: 768px) {
+    #about {
+        /* min-height: 10000px; */
+        height: fit-content;
+    }
+    .row {
+        flex-direction: column;
+        /* flex-wrap: nowrap; */
+        /* justify-content: space-between; */
+        /* align-items: center; */
+        /* border: yellow 2px solid; */
+    }
+    .about-col-1 img {
+        /* height: calc(35vw + 10vh); */
+        width: 100%
+        aspect-ratio: 9/16;
+    };
+}
+
 /* Services Section */
 #services {
     position: relative;
@@ -407,7 +409,7 @@ nav ul li a:hover::after {
 .services-item {
     opacity: 1;
     background-color: transparent;
-    padding: 2%;
+    padding: 4%;
     border-radius: 15px;
     text-align: center;
     transition: 0.5s;
@@ -422,7 +424,9 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
-/* Overwrite h2, img, and p in services-item to always show */
-.services-item h2, .services-item img, .services-item p {
-    opacity: 1;
+.services-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: calc(10px);
 }
