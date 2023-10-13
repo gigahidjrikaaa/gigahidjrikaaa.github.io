@@ -411,7 +411,7 @@ nav ul li a:hover::after {
 
 .services-item {
     opacity: 1;
-    background-color: transparent;
+    background-color: #222222;
     padding: 4%;
     border-radius: 15px;
     text-align: center;
@@ -422,9 +422,9 @@ nav ul li a:hover::after {
     opacity: 1;
     background-color: #BA2434;
     transition: 0.5s;
-    /* glow */
     box-shadow: 0 0 20px #FFFFFF;
     cursor: pointer;
+    transform: translateY(-10px);
 }
 
 .services-item h2 {
