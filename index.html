@@ -125,7 +125,17 @@
         </div>
     </div>
 
-    <iframe id="chatbot" src="https://web.powerva.microsoft.com/environments/Default-af2c0734-cb42-464f-b6bf-2a241b6ada56/bots/cr319_gigaAssistant/webchat?__version__=2" frameborder="0"></iframe>
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <h1>Hi, I'm Giga's Assistant! (Beta) [Indonesian]</h1>
+            <p>Ketik "help" untuk memulai!</p>
+        </div>
+        <div id="chatbot" role="main"></div>
+    </div>
+    
+
+    <!-- <iframe id="chatbot" role="main" src="https://web.powerva.microsoft.com/environments/Default-af2c0734-cb42-464f-b6bf-2a241b6ada56/bots/cr319_gigaAssistant/webchat?__version__=2" frameborder="0"></iframe> -->
 
     <!-- Footer -->
     <footer>
@@ -138,6 +148,76 @@
             </ul>
         </div>
     </footer>
+
+    <!-- Scripts for Web Chat -->
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+
+    <script>
+        const styleOptions = {
+            botAvatarInitials: 'GA',
+            userAvatarInitials: 'A',
+            backgroundColor: '#ffffff',
+            accent: '#BA2434',
+            botAvatarBackgroundColor: "#000000",
+            // botAvatarImage: 'https://learn.microsoft.com/azure/bot-service/v4sdk/media/logo_bot.svg',
+            // userAvatarImage: 'https://avatars.githubusercontent.com/u/661465',
+            bubbleBackground: '#BA2434',
+            bubbleTextColor: '#ffffff',
+            bubbleFromUserBackground: '#BA2434',
+            bubbleFromUserTextColor: '#ffffff',
+            bubbleFromUserBorderColor: '#BA2434',
+            bubbleBorderColor: '#BA2434',
+            bubbleBorderRadius: 10,
+            bubblePadding: '10px',
+            bubbleFromUserBorderRadius: 10,
+            sendBoxBackground: '#ffffff',
+            sendBoxButtonColor: '#BA2434',
+            sendBoxButtonColorOnDisabled: '#444444',
+            sendBoxTextColor: '#BA2434',
+            sendBoxBorderBottom: 'solid 2px #BA2434',
+            sendBoxBorderLeft: 'solid 2px #BA2434',
+            sendBoxBorderRight: 'solid 2px #BA2434',
+            sendBoxBorderTop: 'solid 2px #BA2434',
+            sendBoxPlaceholderColor: '#BA2434',
+            sendBoxTextWrap: false,
+
+            // Add styleOptions to customize Web Chat canvas
+            hideUploadButton: true
+        };
+
+        // Add your BOT token endpoint below
+        var theURL = "https://defaultaf2c0734cb42464fb6bf2a241b6ada.56.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cr319_gigaAssistant/directline/token?api-version=2022-03-01-preview";
+
+        var environmentEndPoint = theURL.slice(0,theURL.indexOf('/powervirtualagents'));
+        var apiVersion = theURL.slice(theURL.indexOf('api-version')).split('=')[1];
+        var regionalChannelSettingsURL = `${environmentEndPoint}/powervirtualagents/regionalchannelsettings?api-version=${apiVersion}`; 
+
+        var directline;
+        fetch(regionalChannelSettingsURL)
+            .then((response) => {
+                return response.json();
+                })
+            .then((data) => {
+                directline = data.channelUrlsById.directline;
+                })
+            .catch(err => console.error("An error occurred: " + err));
+
+        fetch(theURL)
+            .then(response => response.json())
+            .then(conversationInfo => {
+                window.WebChat.renderWebChat(
+                    {
+                        directLine: window.WebChat.createDirectLine({
+                            domain: `${directline}v3/directline`,
+                            token: conversationInfo.token,
+                        }),
+                        styleOptions
+                    },
+                    document.getElementById('chatbot')
+                );
+            })
+            .catch(err => console.error("An error occurred: " + err));
+    </script>
 </body>
 
 
