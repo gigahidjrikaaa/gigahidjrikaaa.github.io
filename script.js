@@ -15,6 +15,30 @@ function openTab(tabname) {
     document.getElementById(tabname + "-link").classList.add("active-link");
 }
 
+// Minimize chatbot
+function minimizeChatbot() {
+    document.getElementById("chatbot").classList.toggle("minimized");
+    // Add a red overlay to the chatbot
+    document.getElementById("chatbot").classList.toggle("minimized-overlay");
+}
+
+// Open chatbot
+function openChatbot() {
+    document.getElementById("chatbot").classList.remove("minimized");
+}
+
+// If the user clicks anywhere outside of the chatbot, minimize it. If the user clicks on the chatbot, don't minimize it.
+window.onclick = function(event) {
+    if (!event.target.matches('.chatbot')) {
+        minimizeChatbot();
+    }
+
+    if (event.target.matches('.chatbot')) {
+        openChatbot();
+        console.log("clicked");
+    }
+}
+
 let ticking = false;
 
 // Change navbar size and color on scroll
