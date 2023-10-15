@@ -449,6 +449,22 @@ nav ul li a:hover::after {
     box-shadow: 0 0 100px #0072b1  inset;
 }
 
+#github-link {
+    display: inline-block;
+    position: relative;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#github-link:hover {
+    color: #24292e;
+    transition: 0.5s;
+    box-shadow: 0 0 100px #FFFFFF inset;
+}
+
 .about-col-1 {
     flex-basis: 35%;
     flex-shrink: 0 !important;  
