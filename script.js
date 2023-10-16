@@ -40,6 +40,9 @@ window.onclick = function(event) {
     
     // if the user click anywhere outside of the chatbot, minimize it. But, don't if it is span inside of the chatbot.
     if (!event.target.matches('#chatbot-container *') && !event.target.matches('#chatbot-container') && !event.target.matches('#chatbot-container span') && !event.target.matches('#chatbot-container span *') && !event.target.matches('#chatbot-container button') && !event.target.matches('#chatbot-container button *')) {
+        if(event.target.matches('span *') || event.target.matches('span') || event.target.matches('button *') || event.target.matches('button')) {
+            return;
+        }
         minimizeChatbot();
     }
 
