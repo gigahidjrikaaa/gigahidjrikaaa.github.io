@@ -30,6 +30,17 @@ function toggleChatbot() {
     document.getElementById("chatbot-container").classList.toggle("minimized");
 }
 
+// Toggle Hamburger Menu
+function toggleMobileMenu() {
+    // get the <ul> element with the mobile-menu class
+    var mobileMenu = document.getElementById("mobile-menu");
+
+    console.log(mobileMenu);
+
+    // toggle the class "active" on the mobile menu
+    mobileMenu.classList.toggle("active");
+}
+
 // If the user clicks anywhere outside of the chatbot container, minimize it. If the user clicks on the chatbot, don't minimize it.
 window.onclick = function(event) {
     // if the user clicks on the header, toggle the chatbot
@@ -51,8 +62,8 @@ window.onclick = function(event) {
         openChatbot();
     }
 
-    console.log(event.target);
-    console.log(event.target.matches('#chatbot-container *') || event.target.matches('#chatbot-container'));
+    // console.log(event.target);
+    // console.log(event.target.matches('#chatbot-container *') || event.target.matches('#chatbot-container'));
 
 }
 
@@ -97,3 +108,6 @@ window.addEventListener('scroll', function(e) {
     }
     ticking = true;
 });
+
+// Add event listener to hamburger menu
+document.getElementById("hamburger-menu").addEventListener("click", toggleMobileMenu);
